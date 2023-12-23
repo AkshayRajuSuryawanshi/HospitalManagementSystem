@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+        <meta charset="utf-8" />
+        <title>Hospital Management System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet"> 
+         <!-- DataTables -->
+        <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Responsive datatable examples -->
+        <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <style>
+            table tr th{
+                text-transform:uppercase;
+            }
+        </style>
+    </head>
+
+    <body data-topbar="light" data-layout="horizontal">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <?php include'header.php';?>
+    
+
+           
+            <!-- Start right Content here -->
+          
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+                       <div class="row">
+                               <div class="col-xl-12">
+                                <div class="card">
+                                 <div class="card-header">
+                                    <nav class="nav">
+                                      <a class="nav-link text-uppercase" aria-current="page" href="shiftmaster.php">Employee Master</a>
+                                      <a href="employeetype.php" class="nav-link text-uppercase">Employee Type</a>
+                                      <a href="shiftmaster.php" class="nav-link text-uppercase">Shift Master</a>
+                                      <a href="empwork.php" class="nav-link text-uppercase active fw-bold">Emp. Work Assign Master</a>
+                                     </nav>
+                                </div>    
+                                <div class="card-body">
+                                    <div class="row">
+                                         <div class="col-xl-12">   
+                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                              ADD ASSIGN WORK
+                                             </button>
+                                         </div>
+                                     </div>
+                                    <div class="row mt-3">
+                                        <div class="col-xl-12">
+                                            <table id="datatable" class="table dt-responsive nowrap table-striped" 
+                                            style="width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Sr. No.</th>
+                                                        <th>Shift's</th>
+                                                        <th>Shift's From</th>
+                                                        <th>Shift's To</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Morning</td>
+                                                        <td>1/12023</td>
+                                                        <td>10/12023</td>
+                                                        <td>
+                                                            <a href="#" style="margin-right:10px;">
+                                                                <i class="fas fa-edit text-primary fs-5"></i>
+                                                            </a>
+                                                            <a href="#">
+                                                                <i class="fas fa-trash-alt text-primary fs-5"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> 
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <!--End Page-content-->
+                </div>
+                
+                                                
+               <?php include'footer.php';?>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">EMPLOYEE WORK ASSIGN MASTER</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-xl-12">
+                         <div class="row">
+                            <div class="col-xl-12">
+                                <label class="control-label">Employee</label>
+                                <input type="text" name="" class="form-control" placeholder="Enter Shift Name">
+                            </div>
+                            <div class="col-xl-12 mt-3">
+                            <div class="mb-0">
+                                <label>Date Range</label>
+                                    <div>
+                                      <div class="input-daterange input-group" id="datepicker4" data-date-format="dd M, yyyy"  data-date-autoclose="true"  data-provide="datepicker" data-date-container='#datepicker4'>
+                                      <input type="text" class="form-control" name="start" placeholder="Start date" />
+                                      <input type="text" class="form-control" name="end" placeholder="End date" />
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                     </div>
+                 </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+        <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <!-- Required datatable js -->
+        <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <!--Morris Chart-->
+        <script src="assets/libs/morris.js/morris.min.js"></script>
+        <script src="assets/libs/raphael/raphael.min.js"></script>
+
+        <script src="assets/js/pages/dashboard.init.js"></script>
+        
+        <!-- Responsive examples -->
+        <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+        
+        <!-- App js -->
+        <script src="assets/js/app.js"></script>
+        
+    </body>
+</html>
